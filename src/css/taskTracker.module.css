@@ -1,0 +1,18 @@
+.taskListContainer {
+  height: calc(100% - 220px);
+  box-shadow: 1px 0 5px 2px rgba(0, 0, 0, .5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #fafafa;
+  align-items: center;
+}
+
+.taskList {
+  overflow-y: auto;
+  display: block;
+  width: calc(100% - 48px);
+  height: calc(100% - 3rem);
+  background: #fff;
+  padding: 1rem;
+}
