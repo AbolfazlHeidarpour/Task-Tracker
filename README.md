@@ -5,9 +5,13 @@ Created by `Vite`
 
 ## Technologies
 1- React
+
 2- Typescript
+
 3- Jotai
+
 4- Material UI
+
 5- React Icons
 
 ## Start
