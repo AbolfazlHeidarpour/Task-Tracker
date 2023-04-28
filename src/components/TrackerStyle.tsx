@@ -13,7 +13,6 @@ export const TrackerStyle = styled(Box)({
     border: 'none',
     padding: '0.35rem .75rem',
     fontWeight: 'bold',
-    fontSize: .9
   }
 });
 
@@ -25,14 +24,16 @@ export const TrackerListHead = styled(List)({
   borderRadius: 3,
   padding: '15px 20px',
   marginTop: '25px',
-  marginBottom: '25px'
 });
 
 export const TrackerRow = styled(List)({
-  marginBottom: 25,
+  marginBottom: 15,
 });
 
 export const TaskItemStyle = styled(ListItem)({
+  display: 'flex',
+  justifyContent: 'space-between',
+  height: 70,
   backgroundColor: '#fff',
   boxShadow: '0px 0px 5px 1px rgba(0, 0, 0, 0.2)',
   borderRadius: 3,

@@ -1,15 +1,17 @@
-import {TextField, Typography} from "@mui/material";
+import {Typography} from "@mui/material";
 import {
-  NewTaskStyle,
-  TaskItemStyle,
   TaskTrackerContainer,
-  TrackerListHead,
   TrackerRow,
   TrackerStyle
 } from "./TrackerStyle";
 import classes from '../css/taskTracker.module.css';
+import {TaskTrackerHeader} from "./TaskTrackerHeader";
+import {TaskItem} from "./TaskItem";
+import {useAtomValue} from "jotai";
+import {tasksAtom} from "../atoms/tasksAtom";
 
 export const TaskTrackerApp = () => {
+  const tasks = useAtomValue(tasksAtom);
 
   return (
     <TaskTrackerContainer>
@@ -17,41 +19,10 @@ export const TaskTrackerApp = () => {
         Task Tracker
       </Typography>
       <TrackerStyle>
-        <TrackerListHead>
-          <Typography>Date</Typography>
-          <Typography>Task</Typography>
-        </TrackerListHead>
-        <TrackerRow>
-          <NewTaskStyle>
-            <TextField />
-          </NewTaskStyle>
-        </TrackerRow>
+        <TaskTrackerHeader />
         <TrackerRow className={classes.taskListContainer}>
           <span className={classes.taskList}>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
-            <TaskItemStyle>item</TaskItemStyle>
+            {tasks.map(t => <TaskItem key={t.Id} task={t}/>)}
           </span>
         </TrackerRow>
       </TrackerStyle>
